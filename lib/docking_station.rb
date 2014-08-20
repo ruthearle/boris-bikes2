@@ -1,5 +1,7 @@
 class DockingStation
 
+	attr_reader :bikes
+
 	def initialize
 		@bikes = []
 	end
@@ -9,8 +11,15 @@ class DockingStation
 	end
 
 	def dock(bike)
-	@bikes << bike
+		@bikes << bike
 	end
 
+	def release(bike)
+		@bikes.delete(bike)
+	end
+
+	def working_bikes
+		@bikes.select{ |bike| bike.working? }
+	end
 
 end
