@@ -31,4 +31,5 @@ describe Bike do
     bike = Bike.new({:serial_number => "DDD 111-11-11111"})
     expect(bike.serial_number).to match(/^\w{3}\s\d{3}-\d{2}-\d{5}/)
   end
+
 end
