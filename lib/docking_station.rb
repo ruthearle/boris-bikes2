@@ -11,7 +11,7 @@ class DockingStation
 		# (note the equals sign) defined in BikeContainer
 		# capacity (the second arguement to fetch()) is calling
 		# the capacity() method in BikeContainer
-		self.capacity = options.fetch(:capacity, capacity)
+		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
 	end
 
 

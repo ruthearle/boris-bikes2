@@ -1,13 +1,9 @@
 require 'bike_container'
 
-class ContainerHolder; include BikeContainer; end
+shared_examples 'a bike container' do
 
-describe BikeContainer do
-
-	let(:bike)    { Bike.new           }
-	let(:station) { DockingStation.new }
-    let(:holder)   {ContainerHolder.new}
-
+    let(:bike)    { Bike.new            }
+    let(:holder)  { described_class.new }
 
 	it "can accept a bike" do
 		expect(holder.bikes.count).to eq(0)
@@ -15,14 +11,14 @@ describe BikeContainer do
 		expect(holder.bike_count).to eq(1)
 	end
 
-		it "can release a bike" do
-		bike2 = Bike.new
-		holder.dock(bike2)
-		holder.dock(bike)
-		expect(holder.bikes).to eq [bike2, bike]
-		holder.release(bike2)
-		expect(holder.bikes).to eq [bike]
-		# expect(station.bike_count).to eq(0)
+	it "can release a bike" do
+			bike2 = Bike.new
+			holder.dock(bike2)
+			holder.dock(bike)
+			expect(holder.bikes).to eq [bike2, bike]
+			holder.release(bike2)
+			expect(holder.bikes).to eq [bike]
+			# expect(station.bike_count).to eq(0)
 	end
 
 	it "it knows if there are available bikes" do
