@@ -1,23 +1,27 @@
-require bike_container
+require 'bike_container'
+
+class ContainerHolder; include BikeContainer; end
 
 describe BikeContainer do
 
 	let(:bike)    { Bike.new           }
 	let(:station) { DockingStation.new }
+    let(:holder)   {ContainerHolder.new}
+
 
 	it "can accept a bike" do
-		expect(station.bikes.count).to eq(0)
-		station.dock(bike)
-		expect(station.bike_count).to eq(1)
+		expect(holder.bikes.count).to eq(0)
+		holder.dock(bike)
+		expect(holder.bike_count).to eq(1)
 	end
 
 		it "can release a bike" do
 		bike2 = Bike.new
-		station.dock(bike2)
-		station.dock(bike)
-		expect(station.bikes).to eq [bike2, bike]
-		station.release(bike2)
-		expect(station.bikes).to eq [bike]
+		holder.dock(bike2)
+		holder.dock(bike)
+		expect(holder.bikes).to eq [bike2, bike]
+		holder.release(bike2)
+		expect(holder.bikes).to eq [bike]
 		# expect(station.bike_count).to eq(0)
 	end
 
@@ -25,10 +29,10 @@ describe BikeContainer do
 		bike = Bike.new
 		bike2 = Bike.new
 		bike2.break!
-		station.dock(bike)
-		station.dock(bike2)
-		expect(station.bikes).to eq [bike, bike2]
-		expect(station.working_bikes).to eq [bike]
+		holder.dock(bike)
+		holder.dock(bike2)
+		expect(holder.bikes).to eq [bike, bike2]
+		expect(holder.working_bikes).to eq [bike]
 	end
 
 end

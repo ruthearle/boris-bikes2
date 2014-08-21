@@ -1,6 +1,10 @@
-class DockingStation
 
-	attr_reader :bikes
+
+module BikeContainer
+
+DEFAULT_CAPACITY = 10
+
+attr_reader :bikes
 
 	def initialize
 		@bikes = []
@@ -20,6 +24,15 @@ class DockingStation
 
 	def working_bikes
 		@bikes.select{ |bike| bike.working? }
+	end
+
+	def capacity
+	@capacity ||= DEFAULT_CAPACITY
+		
+	end
+
+	def capacity=(value)
+		@capacity = value
 	end
 
 end
