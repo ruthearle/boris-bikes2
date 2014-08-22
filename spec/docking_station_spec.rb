@@ -1,12 +1,11 @@
 require 'docking_station'
 require 'bike_container'
-require 'bike'
 
 describe DockingStation do
 
-  it_behaves_like 'a bike container'
+  let(:station) { DockingStation.new(:capacity => 20) }
 
-  let(:station) { DockingStation.new }
-  let(:bike)    { Bike.new           }
-
+  it 'allows setting the default capacity on initialization' do
+    expect(station.capacity).to eq(20)
+  end
 end

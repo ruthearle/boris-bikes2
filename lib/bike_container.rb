@@ -1,6 +1,16 @@
+require_relative 'unique_number_generator'
+
 module BikeContainer
 
+include UniqueNumberGenerator
+
 DEFAULT_CAPACITY = 10
+
+
+	def initialize(options = {})
+		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
+		@location = location_number_generator
+	end
 
 	def bikes
 		@bikes ||= []
@@ -23,7 +33,7 @@ DEFAULT_CAPACITY = 10
 	end
 
 	def capacity
-		@capacity 
+		@capacity
 	end
 
 	def capacity=(value)
