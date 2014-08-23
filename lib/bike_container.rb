@@ -7,8 +7,8 @@ include UniqueNumbers
   DEFAULT_CAPACITY = 10
 
   def initialize(options = {})
+    super
     @capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
-    #super
   end
 
   def bikes
@@ -43,7 +43,4 @@ include UniqueNumbers
     bike_count == capacity
   end
 
-  def serial_number
-    @serial_number    
-  end
 end

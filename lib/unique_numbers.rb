@@ -9,9 +9,11 @@ module UniqueNumbers
     "#{sn} #{indicative1}-#{indicative2}-#{indicative3}"
   end
 
-	def initialize(serial_number: serial_number_generator)
-		 @serial_number = serial_number 
+	def initialize(options = {})
+		 @serial_number = options.fetch(:serial_number, serial_number_generator)
 	end
 
-
+	def serial_number
+    @serial_number    
+  end
 end
