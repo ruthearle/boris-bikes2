@@ -1,5 +1,4 @@
 require 'bike_container'
-require 'unique_number_generator'
 
 class ContainerHolder; include BikeContainer; end
 

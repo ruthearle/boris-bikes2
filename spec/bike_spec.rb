@@ -1,5 +1,4 @@
 require 'bike'
-require 'unique_number_generator'
 
 describe Bike do
 
