@@ -8,7 +8,7 @@ include UniqueNumbers
 
   def initialize(options = {})
     @capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
-    super
+    #super
   end
 
   def bikes
