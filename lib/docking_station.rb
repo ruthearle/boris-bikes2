@@ -7,5 +7,6 @@ class DockingStation
 
   def initialize(options = {})
     self.capacity = options.fetch(:capacity, capacity)
+ 	super
   end
 end

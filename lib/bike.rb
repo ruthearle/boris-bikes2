@@ -1,16 +1,12 @@
+require_relative 'unique_numbers'
+
 class Bike
 
-  def serial_number_generator
-    sn = ("A".."Z").to_a.sample(3).join
-    indicative1 =(0..9).to_a.sample(3).join
-    indicative2 =(0..9).to_a.sample(2).join
-    indicative3 =(0..9).to_a.sample(5).join
-    "#{sn} #{indicative1}-#{indicative2}-#{indicative3}"
-  end
+  include UniqueNumbers
 
-	def initialize(serial_number: serial_number_generator)
+	def initialize(options = {})
 		@working = true
-		@serial_number = serial_number
+    super
 	end
 
   def working?

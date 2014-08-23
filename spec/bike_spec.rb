@@ -1,6 +1,9 @@
 require 'bike'
+require_relative 'unique_numbers_spec'
 
 describe Bike do
+
+  include_examples "a serial number" do
 
     let(:bike) { Bike.new }
 
@@ -23,9 +26,10 @@ describe Bike do
     end
 
 
-    it "bike can have a default serial number" do
+    #it "bike can have a default serial number" do
     # i am expecting my bike to have a serial number
-      bike = Bike.new({:serial_number => "DDD 111-11-11111"})
-      expect(bike.serial_number).to match(/^\w{3}\s\d{3}-\d{2}-\d{5}/)
-    end
+    #  bike = Bike.new({:serial_number => "0000000000"})
+    #  expect(bike.serial_number).to match(/^\d{10}/)
+    #end
   end
+end
