@@ -12,7 +12,6 @@ describe Bike do
     end
 
     it "can be broken" do
-      # expect(bike).to be_working
       expect(bike.working?).to be true
       bike.break!
       expect(bike.working?).to be false
@@ -24,12 +23,5 @@ describe Bike do
       bike.fix!
       expect(bike.working?).to be true
     end
-
-
-    #it "bike can have a default serial number" do
-    # i am expecting my bike to have a serial number
-    #  bike = Bike.new({:serial_number => "0000000000"})
-    #  expect(bike.serial_number).to match(/^\d{10}/)
-    #end
   end
 end
