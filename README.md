@@ -16,3 +16,6 @@ realisation that my code will only be as good as my test I want to focus
 on this area to ensure I create great code.
 
 Here we go!
+
+On this repos I paired with:
+[AppMaster32](https://github.com/AppMaster32)
