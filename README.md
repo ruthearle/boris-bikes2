@@ -8,8 +8,7 @@ Getting to know our way around Ruby (and classes, inheritance, mixins etc.) by i
 
 In groups, we hashed out a domain model of the problem using [CRC cards](https://en.wikipedia.org/wiki/Class-responsibility-collaboration_card). There was broad agreement that *Bike*, *Dock*, *Garage* and *Van* should feature; all of those are classes in this implementation.
 
-Third go at Boris Bikes project.
--------------------------------
+#####Third go at Boris Bikes project.
 
 This time round I want to focus on my rspec tests. I find it challenging to write good tests. And with the
 realisation that my code will only be as good as my test I want to focus
